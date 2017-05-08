@@ -10,28 +10,28 @@ Navigation.startTabBasedApp({
     {
       label: 'One',
       screen: 'foclock.TimeLine', // this is a registered name for a screen
-      // icon: require('../img/one.png'),
+      icon: require('./img/dummy.png'),
       // selectedIcon: require('../img/one_selected.png'), // iOS only
       title: 'Timeline'
     },
     {
       label: 'Two',
       screen: 'foclock.ExploreView',
-      // icon: require('../img/two.png'),
+      icon: require('./img/dummy.png'),
       // selectedIcon: require('../img/two_selected.png'), // iOS only
       title: 'Explore'
     },
     {
       label: 'Three',
       screen: 'foclock.LeaderBoard',
-      // icon: require('../img/two.png'),
+      icon: require('./img/dummy.png'),
       // selectedIcon: require('../img/two_selected.png'), // iOS only
       title: 'Leaderboard'
     },
     {
       label: 'Four',
       screen: 'foclock.ProfileUser',
-      // icon: require('../img/two.png'),
+      icon: require('./img/dummy.png'),
       // selectedIcon: require('../img/two_selected.png'), // iOS only
       title: 'Profile'
     }
