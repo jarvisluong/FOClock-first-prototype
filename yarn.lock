@@ -562,6 +562,10 @@ babel-plugin-transform-flow-strip-types@^6.21.0, babel-plugin-transform-flow-str
     babel-plugin-syntax-flow "^6.18.0"
     babel-runtime "^6.22.0"
 
+babel-plugin-transform-inline-environment-variables@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-inline-environment-variables/-/babel-plugin-transform-inline-environment-variables-0.0.2.tgz#1372475c6c87f3c4ce6046587730ee041bc784b9"
+
 babel-plugin-transform-object-assign@^6.5.0:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-object-assign/-/babel-plugin-transform-object-assign-6.22.0.tgz#f99d2f66f1a0b0d498e346c5359684740caa20ba"
@@ -2436,7 +2440,7 @@ lodash.templatesettings@^3.0.0:
     lodash._reinterpolate "^3.0.0"
     lodash.escape "^3.0.0"
 
-lodash@4.x.x, lodash@^4.14.0, lodash@^4.16.6, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.6.1:
+lodash@4.x.x, lodash@^4.0.0, lodash@^4.14.0, lodash@^4.16.6, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.6.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -2943,11 +2947,28 @@ react-devtools-core@^2.0.8:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
+react-native-animatable@^1.1.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.2.0.tgz#fd279c6ee4b49161c6cc3b951ed7765b35a73467"
+
+react-native-blur@~1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-blur/-/react-native-blur-1.0.1.tgz#c81e48f631489a87a86a0c58674f6283d7dc15a7"
+
 react-native-navigation@^1.1.61:
   version "1.1.61"
   resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-1.1.61.tgz#a4eea9980ffbfa35cc3c6ff6183cefc0d7d28f1f"
   dependencies:
     lodash "4.x.x"
+
+react-native-ui-lib@^1.0.42:
+  version "1.0.42"
+  resolved "https://registry.yarnpkg.com/react-native-ui-lib/-/react-native-ui-lib-1.0.42.tgz#f0fc21f3cef5f17bff2e90323f03b8d2a9cec391"
+  dependencies:
+    babel-plugin-transform-inline-environment-variables "^0.0.2"
+    lodash "^4.0.0"
+    react-native-animatable "^1.1.0"
+    react-native-blur "~1.0.0"
 
 react-native@0.44.0:
   version "0.44.0"

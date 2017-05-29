@@ -4,36 +4,62 @@ import { registerScreens } from './screens';
 
 registerScreens(); // this is where to register all of our app's screen
 
+const navigatorStyle = {
+      navBarBackgroundColor: '#00A3AD',
+      navBarTextColor: '#fff'
+}
+
 // start the app
 Navigation.startTabBasedApp({
   tabs: [
     {
-      label: 'One',
       screen: 'foclock.TimeLine', // this is a registered name for a screen
-      // icon: require('../img/one.png'),
+      icon: require('./img/tab-icons/timeline.png'),
+      iconInsets: {
+        top: 6,
+        bottom: -6
+      },
       // selectedIcon: require('../img/one_selected.png'), // iOS only
-      title: 'Timeline'
+      title: 'Timeline',
+      navigatorStyle: navigatorStyle
     },
     {
-      label: 'Two',
       screen: 'foclock.ExploreView',
-      // icon: require('../img/two.png'),
+      icon: require('./img/tab-icons/explore.png'),
+      iconInsets: {
+        top: 6,
+        bottom: -6
+      },
       // selectedIcon: require('../img/two_selected.png'), // iOS only
-      title: 'Explore'
+      title: 'Explore',
+      navigatorStyle: navigatorStyle
     },
     {
-      label: 'Three',
       screen: 'foclock.LeaderBoard',
-      // icon: require('../img/two.png'),
+      icon: require('./img/tab-icons/leaderboard.png'),
+      iconInsets: {
+        top: 6,
+        bottom: -6
+      },
       // selectedIcon: require('../img/two_selected.png'), // iOS only
-      title: 'Leaderboard'
+      title: 'Leaderboard',
+      navigatorStyle: navigatorStyle
     },
     {
-      label: 'Four',
       screen: 'foclock.ProfileUser',
-      // icon: require('../img/two.png'),
+      icon: require('./img/tab-icons/profile.png'),
+      iconInsets: {
+        top: 6,
+        bottom: -6
+      },
       // selectedIcon: require('../img/two_selected.png'), // iOS only
-      title: 'Profile'
+      title: 'Profile',
+      navigatorStyle: navigatorStyle
     }
-  ]
+  ],
+  tabsStyle: {
+    tabBarButtonColor: '#fff',
+    tabBarSelectedButtonColor: '#000',
+    tabBarBackgroundColor: '#00A3AD'
+  }
 });
