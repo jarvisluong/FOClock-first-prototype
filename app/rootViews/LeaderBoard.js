@@ -36,10 +36,21 @@ const styles = StyleSheet.create({
     leaderboardRowContent: {
         elevation: 2,
         flexGrow: 1,
-        padding: 15,
+        paddingLeft: 15,
+        paddingRight: 15,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center'
+    },
+    leaderboardUser: {
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    userProfilePic: {
+        width: 34,
+        height: 34,
+        borderRadius: 17,
+        marginRight: 15
     },
     leaderboardUsername: {
         fontSize: 20,
@@ -123,7 +134,10 @@ class LeaderBoard extends Component {
                                     }]} />
                             </View>
                             <View style={styles.leaderboardRowContent}>
-                                <Text style={styles.leaderboardUsername}>{rowData.name}</Text>
+                                <View style={styles.leaderboardUser}>
+                                    <Image source={require('../../assets/profile_pic.jpg')} style={styles.userProfilePic}/>
+                                    <Text style={styles.leaderboardUsername}>{rowData.name}</Text>
+                                </View>
                                 <Text style={styles.leaderboardScore}>{rowData.score}</Text>
                             </View>
                         </View>

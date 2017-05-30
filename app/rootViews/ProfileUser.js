@@ -10,6 +10,13 @@ import Swiper from 'react-native-swiper';
 
 const backgroundImg = require('../../assets/5.jpg');
 
+const demoPics = [
+    require('../../assets/2.jpg'),
+    require('../../assets/3.jpg'),
+    require('../../assets/4.jpg'),
+    require('../../assets/5.jpg')
+]
+
 const styles = StyleSheet.create({
     mainBackgroundImgWrapper: {
         height: Dimensions.get('window').height,
@@ -56,6 +63,10 @@ const styles = StyleSheet.create({
         width: Dimensions.get('window').width,
         flexGrow: 1,
         alignItems: 'center'
+    },
+    demoPics: {
+        width: Dimensions.get('window').width*0.85,
+        height: 250
     }
 });
 
@@ -98,15 +109,27 @@ class ProfileUser extends Component {
                     </View>
                     <View style={styles.photoSwipe}>
                         <Swiper
-                            width={Dimensions.get('window').width*0.8}
-                            height={200}
-                            showsButtons={true}
-                            autoplay={true}
+                            width={Dimensions.get('window').width*0.85}
+                            height={250}
+                            activeDotStyle={{
+                                backgroundColor: '#fff'
+                            }}
+                            paginationStyle={{
+                                bottom: -25
+                            }}
                         >
-                            <View><Text>1</Text></View>
-                            <View><Text>2</Text></View>
-                            <View><Text>3</Text></View>
-                            <View><Text>4</Text></View>
+                            <View>
+                                <Image source={demoPics[0]} style={styles.demoPics}/>
+                            </View>
+                            <View>
+                                <Image source={demoPics[1]} style={styles.demoPics}/>
+                            </View>
+                            <View>
+                                <Image source={demoPics[2]} style={styles.demoPics}/>
+                            </View>
+                            <View>
+                                <Image source={demoPics[3]} style={styles.demoPics}/>
+                            </View>
                         </Swiper>
                     </View>
                 </View>

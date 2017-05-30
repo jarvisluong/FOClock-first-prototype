@@ -4,36 +4,59 @@ import { registerScreens } from './screens';
 
 registerScreens(); // this is where to register all of our app's screen
 
+const navigatorStyleAndroid = {
+      navBarBackgroundColor: '#00A3AD',
+      navBarTextColor: '#fff',
+      navBarTitleTextCentered: true
+}
+
 // start the app
 Navigation.startTabBasedApp({
   tabs: [
     {
-      label: 'One',
       screen: 'foclock.TimeLine', // this is a registered name for a screen
-      icon: require('./img/dummy.png'),
-      // selectedIcon: require('../img/one_selected.png'), // iOS only
-      title: 'Timeline'
+      icon: require('./img/tab-icons/timeline.png'),
+      iconInsets: {
+        top: 6,
+        bottom: -6
+      },
+      title: 'Timeline',
+      navigatorStyle: navigatorStyleAndroid
     },
     {
-      label: 'Two',
       screen: 'foclock.ExploreView',
-      icon: require('./img/dummy.png'),
-      // selectedIcon: require('../img/two_selected.png'), // iOS only
-      title: 'Explore'
+      icon: require('./img/tab-icons/explore.png'),
+      iconInsets: {
+        top: 6,
+        bottom: -6
+      },
+      title: 'Explore',
+      navigatorStyle: navigatorStyleAndroid
     },
     {
-      label: 'Three',
       screen: 'foclock.LeaderBoard',
-      icon: require('./img/dummy.png'),
-      // selectedIcon: require('../img/two_selected.png'), // iOS only
-      title: 'Leaderboard'
+      icon: require('./img/tab-icons/leaderboard.png'),
+      iconInsets: {
+        top: 6,
+        bottom: -6
+      },
+      title: 'Leaderboard',
+      navigatorStyle: navigatorStyleAndroid
     },
     {
-      label: 'Four',
       screen: 'foclock.ProfileUser',
-      icon: require('./img/dummy.png'),
-      // selectedIcon: require('../img/two_selected.png'), // iOS only
-      title: 'Profile'
+      icon: require('./img/tab-icons/profile.png'),
+      iconInsets: {
+        top: 6,
+        bottom: -6
+      },
+      title: 'Profile',
+      navigatorStyle: navigatorStyleAndroid
     }
-  ]
+  ],
+  appStyle: {
+    tabBarButtonColor: '#fff',
+    tabBarSelectedButtonColor: '#000',
+    tabBarBackgroundColor: '#00A3AD'
+  }
 });
