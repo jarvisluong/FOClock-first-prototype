@@ -11,20 +11,20 @@ const styles = StyleSheet.create({
     singleEventWrapper: {
         width: Dimensions.get('window').width,
         flexGrow: 1,
-        height: 120
+        height: 160
     },
     singleEventBackgroundImgWrapper: {
-        height: 120,
+        height: 160,
         width: Dimensions.get('window').width,
         position: 'absolute'
     },
     singleEventBackgroundImg: {
         width: Dimensions.get('window').width,
-        height: 120
+        height: 160
     },
     singleEventBackgroundImgColorLayer: {
         backgroundColor: 'black',
-        opacity: 0.6,
+        opacity: 0.3,
         position: 'absolute',
         left: 0, top: 0, bottom: 0, right: 0
     },
@@ -35,11 +35,11 @@ const styles = StyleSheet.create({
         padding: 20
     },
     singleEventTitle: {
-        fontSize: 23,
-        lineHeight: 26,
+        fontSize: 27,
+        lineHeight: 30,
         fontWeight: 'bold',
         textAlign: 'left',
-        color: '#fff',
+        color: '#FFFB38',
         paddingBottom: 10
     },
 
@@ -48,16 +48,11 @@ const styles = StyleSheet.create({
     },
     singleEventPlace: {
         fontSize: 15,
-        color: '#ddd'
+        color: '#FFFB38'
     },
     singleEventDistance: {
-        color: '#ddd',
-        fontSize: 14,
-    },
-    singleEventTime: {
-        fontSize: 15,
         color: '#FFFB38',
-        fontWeight: 'bold',
+        fontSize: 14,
     },
     singleEventIconsWrapper__left: {
         position: 'absolute',
@@ -70,10 +65,10 @@ const styles = StyleSheet.create({
         bottom: 15,
     },
     singleEventIcon: {
-        color: '#fff',
+        color: '#FFFB38',
         opacity: 0.9,
-        height: 20,
-        fontSize: 14
+        height: 25,
+        fontSize: 18
     }
 });
 
@@ -84,17 +79,16 @@ const SingleEvent = (props) => {
 
     return (
         <View style={styles.singleEventWrapper}>
-            {/*<View style={[styles.singleEventBackgroundImgWrapper, props.happening ? {height: 160} : {height: 120}]}>
-                    <Image
+            <View style={styles.singleEventBackgroundImgWrapper}>
+                    {/*<Image
                         source={backgroundImg}
-                        style={[styles.singleEventBackgroundImg, props.happening ? {height: 160} : {height: 120}]} />
-                    <View style={[styles.singleEventBackgroundImgColorLayer, props.happening ? {height: 160} : {height: 120}]} />
-                </View>*/}
+                        style={[styles.singleEventBackgroundImg, props.happening ? {height: 160} : {height: 120}]} />*/}
+                    <View style={styles.singleEventBackgroundImgColorLayer} />
+                </View>
 
             <View style={styles.singleEventContent}>
                 <Text style={styles.singleEventTitle}>{eventName}</Text>
                 <View style={styles.singleEventMeta}>
-                    <Text style={styles.singleEventTime}>{eventTime}</Text>
                     <Text style={styles.singleEventPlace}>{String(eventPlace).split(',')[0]}</Text>
                 </View>
 
@@ -105,7 +99,7 @@ const SingleEvent = (props) => {
                 <View style={styles.singleEventIconsWrapper}>
                     {/*{item.teemu && <Text style={styles.singleEventIcon}>
                         <Icon name='school' size={15} /> Emäteemu!</Text>}*/}
-                    <Text style={styles.singleEventIcon}>Coming soon</Text>
+                    <Text style={styles.singleEventIcon}>Ongoing!</Text>
                     {/*{!pastEvent && timepoint.startsSoon && <Text style={styles.gridListItemIcon}>Starts soon!</Text>}*/}
                 </View>
             </View>

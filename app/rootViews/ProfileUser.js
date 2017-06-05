@@ -8,6 +8,8 @@ import {
 } from 'react-native';
 import Swiper from 'react-native-swiper';
 
+import Background from '../components/Background';
+
 const backgroundImg = require('../../assets/5.jpg');
 
 const demoPics = [
@@ -18,22 +20,6 @@ const demoPics = [
 ]
 
 const styles = StyleSheet.create({
-    mainBackgroundImgWrapper: {
-        height: Dimensions.get('window').height,
-        width: Dimensions.get('window').width,
-        position: 'absolute'
-    },
-    mainBackgroundImg: {
-        width: Dimensions.get('window').width,
-        height: Dimensions.get('window').height
-    },
-    mainBackgroundImgColorLayer: {
-        backgroundColor: '#FC5000',
-        opacity: 0.75,
-        position: 'absolute',
-        left: 0, top: 0, bottom: 0, right: 0
-    },
-
     profileWrapper: {
         width: Dimensions.get('window').width,
         paddingTop: 30,
@@ -81,12 +67,7 @@ class ProfileUser extends Component {
     render() {
         return (
             <View>
-                <View style={styles.mainBackgroundImgWrapper}>
-                    <Image source={backgroundImg}
-                            style={styles.mainBackgroundImg}
-                            />
-                    <View style={styles.mainBackgroundImgColorLayer} />
-                </View>
+                <Background imgLink={backgroundImg} />
                 <View>
                     <View style={styles.profileWrapper}>
                         <Image source={this.state.profilePic} style={styles.profilePic}/>

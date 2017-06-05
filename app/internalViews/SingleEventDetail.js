@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
+    ScrollView,
     Image,
     StyleSheet,
     Dimensions
@@ -21,17 +22,26 @@ Typography.loadTypographies({
     p: {
         fontSize: 18,
         fontWeight: '300'
-    }
+    },
+    smallP: {
+        fontSize: 14,
+        fontWeight: '300'
+    } 
 });
 
 Colors.loadColors({
     black: '#000',
 });
 
-const backgroundImg = require('../../assets/single_event_header.jpg');
+const backgroundImg = require('../../assets/partyimage.jpg');
 
 const styles = StyleSheet.create({
-    imageBanner: {
+    imgBannerWrapper: {
+        height: 220,
+        width: Dimensions.get('window').width,
+        flexGrow: 1
+    },
+    imgBanner: {
         height: 220,
         width: Dimensions.get('window').width
     }
@@ -40,9 +50,6 @@ const styles = StyleSheet.create({
 class SingleEventDetail extends Component {
 
     static navigatorStyle = {
-        drawUnderNavBar: true,
-        navBarTranslucent: true,
-        navBarTransparent: true,
         navBarButtonColor: '#fff'
     };
 
@@ -59,44 +66,59 @@ class SingleEventDetail extends Component {
         super();
         this.state = {
             buyPressed: false
-        }
+        };
     }
 
     toggleConfirm() {
-        let currentBuyState = this.state.buyPressed;
-        this.setState({buyPressed: !currentBuyState});
+        const currentBuyState = this.state.buyPressed;
+        this.setState({ buyPressed: !currentBuyState });
     }
 
     render() {
+        const { eventName, eventPlace, eventTime, eventContent } = this.props.eventData;
+
         return (
-            <Swiper
-                horizontal={false}
-                loop={false}
-                showsButtons={false}
-                showsPagination={false}
-            >
-                <View>
-                    <Image
-                        source={backgroundImg}
-                        style={styles.imageBanner}
-                    />
+            <View style={{ flex: 1 }}>
+                <Swiper
+                    loop={false}
+                    showsButtons={false}
+                    showsPagination={false}
+                    automaticallyAdjustContentInsets
+                >
+                    <ScrollView>
+                        <View style={styles.imgBannerWrapper}>
+                            <Image
+                                source={backgroundImg}
+                                style={styles.imgBanner}
+                            />
+                        </View>
+                        <View padding-15>
+                            <Text h1 black>{eventName}</Text>
+                            <Text marginT-5 smallP black>{eventPlace}</Text>
+                            <Text marginT-5 smallP black>{eventTime}</Text>
+                            <Text marginT-15 p black>{eventContent}</Text>
+                        </View>
+                        <View center marginT-20>
+                            {
+                                this.state.buyPressed ?
+                                <Button 
+                                    onPress={this.toggleConfirm.bind(this)} 
+                                    style={{ backgroundColor: '#000' }} 
+                                    label="Confirm" 
+                                /> :
+                                <Button 
+                                    onPress={this.toggleConfirm.bind(this)} 
+                                    background-orange20 
+                                    label="Buy ticket" 
+                                />
+                            }
+                        </View>
+                    </ScrollView>
                     <View padding-15>
-                        <Text h1 black>{this.props.eventName}</Text>
-                        <Text marginT-10 p black>Location - Time</Text>
-                        <Text marginT-25 p black>This is the placeholder text for the description of the event, something
-                            we can build more here. This is very funny lol. No actually not, this is stupid as shit.
-                        </Text>
+                        <Text h1 black>PREPARTY {this.state.index}</Text>
                     </View>
-                    <View center marginT-40>
-                        {this.state.buyPressed? 
-                        <Button onPress={this.toggleConfirm.bind(this)} style={{backgroundColor: '#000'}} label="Confirm" /> : 
-                        <Button onPress={this.toggleConfirm.bind(this)} background-orange20 label="Buy ticket" />}
-                    </View>
-                </View>
-                <View padding-15>
-                    <Text h1 black>PREPARTY {this.state.index}</Text>
-                </View>
-            </Swiper>
+                </Swiper>
+            </View>
         );
     }
 }

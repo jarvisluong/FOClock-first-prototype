@@ -1,16 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
-    ListView,
     StyleSheet,
     Dimensions,
     Text,
     View,
     Image
 } from 'react-native';
-
-const windowWidth = Dimensions.get('window').width;
+import Background from '../components/Background';
+import ReloadListView from '../components/ReloadListView';
 
 const backgroundImg = require('../../assets/2.jpg');
+const profilePicDemoImg = require('../../assets/profile_pic.jpg');
+
+const windowWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
     leaderboardRowWrapper: {
@@ -31,7 +33,10 @@ const styles = StyleSheet.create({
     visualScoreColorLayer: {
         opacity: 0.5,
         position: 'absolute',
-        left: 0, top: 0, bottom: 0, right: 0
+        left: 0,
+        top: 0,
+        bottom: 0,
+        right: 0
     },
     leaderboardRowContent: {
         elevation: 2,
@@ -59,93 +64,41 @@ const styles = StyleSheet.create({
     leaderboardScore: {
         fontSize: 20,
         color: '#fff'
-    },
-
-    mainBackgroundImgWrapper: {
-        height: Dimensions.get('window').height,
-        width: Dimensions.get('window').width,
-        position: 'absolute'
-    },
-    mainBackgroundImg: {
-        width: Dimensions.get('window').width,
-        height: Dimensions.get('window').height
-    },
-    mainBackgroundImgColorLayer: {
-        backgroundColor: '#FC5000',
-        opacity: 0.2,
-        position: 'absolute',
-        left: 0, top: 0, bottom: 0, right: 0
-    },
+    }
 });
 
-const dummyData = [
-    {
-        index: 4,
-        name: 'Ta An Hai',
-        score: 170
-    },
-    {
-        index: 1,
-        name: 'Luong Dang Hai',
-        score: 140
-    },
-    {
-        index: 2,
-        name: 'Some other name',
-        score: 150
-    },
-    {
-        index: 3,
-        name: 'Ankur Dahama',
-        score: 160
-    }
-]
-
-const sortData = (left, right) => right.score - left.score;
-
-class LeaderBoard extends Component {
-    constructor() {
-        super();
-        const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-        this.state = {
-            dataSource: ds.cloneWithRows(dummyData.sort(sortData))
-        }
-    }
-
-    render() {
-        return (
-            <View>
-                <View style={styles.mainBackgroundImgWrapper}>
-                    <Image source={backgroundImg}
-                        style={styles.mainBackgroundImg}
-                    />
-                    <View style={styles.mainBackgroundImgColorLayer} />
-                </View>
-                <ListView
-                    dataSource={this.state.dataSource}
-                    renderRow={(rowData) => (
-                        <View style={styles.leaderboardRowWrapper}>
-                            <View style={styles.visualScoreWrapper}>
-                                <View style={[
-                                    styles.visualScoreColorLayer,
-                                    {
-                                        width: windowWidth * rowData.score / 200,
-                                        backgroundColor: rowData.index % 2 === 0 ? '#FC5000' : '#00A3AD'
-                                    }]} />
-                            </View>
-                            <View style={styles.leaderboardRowContent}>
-                                <View style={styles.leaderboardUser}>
-                                    <Image source={require('../../assets/profile_pic.jpg')} style={styles.userProfilePic}/>
-                                    <Text style={styles.leaderboardUsername}>{rowData.name}</Text>
-                                </View>
-                                <Text style={styles.leaderboardScore}>{rowData.score}</Text>
-                            </View>
+const LeaderBoard = () => (
+    <View>
+        <Background imgLink={backgroundImg} opacity={0.2} />
+        <ReloadListView
+            fetchingUrl={'http://localhost:3000/leaderboard'}
+            renderRow={(rowData, sectionID, rowID) => (
+                <View style={styles.leaderboardRowWrapper}>
+                    <View style={styles.visualScoreWrapper}>
+                        <View
+                            style={[
+                                styles.visualScoreColorLayer,
+                                {
+                                    width: windowWidth * rowData.score * 0.005,
+                                    backgroundColor: rowID % 2 === 0 ? '#FC5000' : '#00A3AD'
+                                }]}
+                        />
+                    </View>
+                    <View style={styles.leaderboardRowContent}>
+                        <View style={styles.leaderboardUser}>
+                            <Image 
+                                source={profilePicDemoImg} 
+                                style={styles.userProfilePic} 
+                            />
+                            <Text style={styles.leaderboardUsername}>{rowData.name}</Text>
                         </View>
-                    )}
-                />
-            </View>
-        );
-    }
-}
+                        <Text style={styles.leaderboardScore}>{rowData.score}</Text>
+                    </View>
+                </View>
+            )}
+            sortFunc={(left, right) => right.score - left.score}
+        />
+    </View>
+);
 
 export default LeaderBoard;
