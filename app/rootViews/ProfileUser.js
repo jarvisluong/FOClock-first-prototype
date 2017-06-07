@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     View,
     Image,
@@ -17,7 +17,7 @@ const demoPics = [
     require('../../assets/3.jpg'),
     require('../../assets/4.jpg'),
     require('../../assets/5.jpg')
-]
+];
 
 const styles = StyleSheet.create({
     profileWrapper: {
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     demoPics: {
-        width: Dimensions.get('window').width*0.85,
+        width: Dimensions.get('window').width * 0.85,
         height: 250
     }
 });
@@ -61,7 +61,7 @@ class ProfileUser extends Component {
         super();
         this.state = {
             profilePic: require('../../assets/profile_pic.jpg'),
-        }
+        };
     }
 
     render() {
@@ -70,27 +70,42 @@ class ProfileUser extends Component {
                 <Background imgLink={backgroundImg} />
                 <View>
                     <View style={styles.profileWrapper}>
-                        <Image source={this.state.profilePic} style={styles.profilePic}/>
-                        <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 20, marginBottom: 12}}>Luong Dang Hai</Text>
-                        <Text style={{color: '#fff', fontSize: 18, marginBottom: 20}}>Professional Programmer</Text>
+                        <Image source={this.state.profilePic} style={styles.profilePic} />
+                        <Text 
+                            style={{
+                                color: '#fff', 
+                                fontWeight: 'bold', 
+                                fontSize: 20, 
+                                marginBottom: 12 }}
+                        >
+                            Luong Dang Hai
+                        </Text>
+                        <Text 
+                            style={{
+                                color: '#fff', 
+                                fontSize: 18, 
+                                marginBottom: 20 }}
+                        >
+                            Professional Programmer
+                        </Text>
                         <View style={styles.profileAchievements}>
                             <View style={styles.achievementDetails}>
-                                <Text style={{color: '#fff'}}>33</Text>
-                                <Text style={{color: '#fff'}}>Likes</Text>
+                                <Text style={{ color: '#fff' }}>33</Text>
+                                <Text style={{ color: '#fff' }}>Likes</Text>
                             </View>
                             <View style={styles.achievementDetails}>
-                                <Text style={{color: '#fff'}}>94</Text>
-                                <Text style={{color: '#fff'}}>Following</Text>
+                                <Text style={{ color: '#fff' }}>94</Text>
+                                <Text style={{ color: '#fff' }}>Following</Text>
                             </View>
                             <View style={styles.achievementDetails}>
-                                <Text style={{color: '#fff'}}>300</Text>
-                                <Text style={{color: '#fff'}}>Followers</Text>
+                                <Text style={{ color: '#fff' }}>300</Text>
+                                <Text style={{ color: '#fff' }}>Followers</Text>
                             </View>
                         </View>
                     </View>
                     <View style={styles.photoSwipe}>
                         <Swiper
-                            width={Dimensions.get('window').width*0.85}
+                            width={Dimensions.get('window').width * 0.85}
                             height={250}
                             activeDotStyle={{
                                 backgroundColor: '#fff'
@@ -100,16 +115,16 @@ class ProfileUser extends Component {
                             }}
                         >
                             <View>
-                                <Image source={demoPics[0]} style={styles.demoPics}/>
+                                <Image source={demoPics[0]} style={styles.demoPics} />
                             </View>
                             <View>
-                                <Image source={demoPics[1]} style={styles.demoPics}/>
+                                <Image source={demoPics[1]} style={styles.demoPics} />
                             </View>
                             <View>
-                                <Image source={demoPics[2]} style={styles.demoPics}/>
+                                <Image source={demoPics[2]} style={styles.demoPics} />
                             </View>
                             <View>
-                                <Image source={demoPics[3]} style={styles.demoPics}/>
+                                <Image source={demoPics[3]} style={styles.demoPics} />
                             </View>
                         </Swiper>
                     </View>

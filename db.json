@@ -1,0 +1,71 @@
+{
+  "events": [
+    {
+        "happening": true,
+        "eventName": "Weekend Bash",
+        "eventTime": "3 June at 21:00",
+        "eventEnd": "4 June at 4:00",
+        "eventPlace": "JJ's Bar",
+        "eventContent": "Päätä lukukausi kaupungin tyylikkäimmissä bileissä! Valmistujaislakilla jonon ohitus klo 24 asti. Ovet auki jo klo 21!! Suosittelemme saapumaan ajoissa :)"
+    },
+    {
+        "happening": false,
+        "eventName": "Salsa night",
+        "eventTime": "3 June at 22:00",
+        "eventEnd": "4 June at 4:00",
+        "eventPlace": "Velvet",
+        "eventContent": "MIKÄ ORIGINAL TURISTI?\nORIGINAL TURISTI on klubi, joka järjestetään jo yhdettätoista vuotta. JOKAISESTA ILLASTA yksi onnekas lähetetään huikealle ja unohtumattomalle TURISTI-bilematkalle Bulgariaan, Varnan Kultahietikolle! TURISTI-veteraaneja on lähes 1300. Oletko sinä seuraava?"
+    },
+    {
+        "happening": false,
+        "eventName": "Koulujen Loppu 2017",
+        "eventTime": "3 June at 22:00",
+        "eventEnd": "4 June at 4:00",
+        "eventPlace": "Jammie's door",
+        "eventContent": "School´s Out! Se on vihdoin ohi! Nyt voi heittää koulukirjat, reput, kynät ja paperit vaikka nuotioon! Nyt on se hetki nostaa maljaa ja juhlia KOULUJEN LOPPU. Tämä on teidän päivänne!\nValmistujaislakilla jonon ohi klo 24 asti!"
+    },
+    {
+        "happening": false,
+        "eventName": "Dream Cruse",
+        "eventTime": "8 June at 22:30",
+        "eventEnd": "11 June at 3:30",
+        "eventPlace": "Turku dream line",
+        "eventContent": "HELLOU EVERYONE! : D\nWhile finalizing our tour, getting to studio at the end of the month, and soon releasing the first single (with related video) we'll continue to kick-start the ball rolling and hit the stage at the next venue:"
+    },
+    {
+        "happening": false,
+        "eventName": "Kinkist Bileet",
+        "eventTime": "10 June at 19:00",
+        "eventEnd": "10 June at 23:59",
+        "eventPlace": "Tampere university of technology",
+        "eventContent": "Mitä: Boomi ry:n valmistujaisjuhla 2017 + Jatkot\nKenelle: Valmistujaisjuhla lukuvuoden 2016-2017 aikana Tampereen yliopistosta valmistuneille / valmistuville kauppatieteiden maistereille. Jatkot kaikille!\nMissä: Valmistujaisjuhla Ravintola Mylläreissä, Åkerlundinkatu 4.\nJatkot Viihdemaailma Ilonassa\nMilloin: 10.6. klo 19.00"
+    }
+  ],
+  "leaderboard": [
+    {
+        "name": "Ta An Hai",
+        "score": 170
+    },
+    {
+        "name": "Luong Dang Hai",
+        "score": 140
+    },
+    {
+        "name": "Some other name",
+        "score": 150
+    },
+    {
+        "name": "Ankur Dahama",
+        "score": 160
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
+
+
+
+
+
+
