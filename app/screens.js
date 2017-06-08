@@ -8,6 +8,8 @@ import LeaderBoard from './rootViews/LeaderBoard';
 import ProfileUser from './rootViews/ProfileUser';
 import TimeLine from './rootViews/TimeLine';
 
+import DevView from './rootViews/DevView';
+
 // register all screens of the app (including internal ones)
 export function registerScreens(store, Provider) {
   Navigation.registerComponent('foclock.DrinkMenu', () => DrinkMenu);
@@ -17,4 +19,8 @@ export function registerScreens(store, Provider) {
   Navigation.registerComponent('foclock.LeaderBoard', () => LeaderBoard);
   Navigation.registerComponent('foclock.ProfileUser', () => ProfileUser);
   Navigation.registerComponent('foclock.TimeLine', () => TimeLine, store, Provider);
+
+  if (__DEV__) {
+    Navigation.registerComponent('foclock.DevView', () => DevView);
+  }
 }

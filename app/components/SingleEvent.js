@@ -2,7 +2,6 @@ import React from 'react';
 import {
     Text,
     View,
-    Image,
     StyleSheet,
     Dimensions
 } from 'react-native';
@@ -26,7 +25,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         opacity: 0.6,
         position: 'absolute',
-        left: 0, top: 0, bottom: 0, right: 0
+        left: 0,
+        top: 0,
+        bottom: 0,
+        right: 0
     },
     singleEventContent: {
         elevation: 2,
@@ -77,8 +79,6 @@ const styles = StyleSheet.create({
     }
 });
 
-const backgroundImg = require('../../assets/single_event_header.jpg');
-
 const SingleEvent = (props) => {
     const { eventName, eventTime, eventPlace } = props.eventData;
 
@@ -110,7 +110,7 @@ const SingleEvent = (props) => {
                 </View>
             </View>
         </View>
-    )
-}
+    );
+};
 
 export default SingleEvent;

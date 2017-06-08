@@ -71,6 +71,7 @@ const LeaderBoard = () => (
     <View>
         <Background imgLink={backgroundImg} opacity={0.2} />
         <ReloadListView
+            dataType={'leaderboard'}
             fetchingUrl={'http://localhost:3000/leaderboard'}
             renderRow={(rowData, sectionID, rowID) => (
                 <View style={styles.leaderboardRowWrapper}>

@@ -39,6 +39,7 @@ class TimeLine extends Component {
             <View>
                 <Background imgLink={backgroundImg} />
                 <ReloadListView
+                    dataType={'events'}
                     fetchingUrl={'http://localhost:3000/events'}
                     renderRow={(rowData) => (
                         <TouchableOpacity onPress={() => this.showEventDetail(rowData)}>
