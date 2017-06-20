@@ -1,3 +1,13 @@
+## This is the first app I tried to make with React Native
+## More improvement coming as I want to try to learn more.
+
+![alt tag](https://raw.githubusercontent.com/jarvisluong/ios-retro-calculator/master/demo.gif)
+
+## Upcoming: Implementing Redux to this app.
+
+## The server side code for this app is a dummy server from json-server
+## Install json-server and run json-server db.json from my package.
+
 ## This app used the following library:
 
 # Author: Luong Dang Hai
